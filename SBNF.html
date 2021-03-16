@@ -1,0 +1,742 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head id="Head1"><meta name="language" content="pt-br" /><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	
+        INFRAERO
+</title><link rel="stylesheet" type="text/css" href="css/estilo.css" /><link rel="stylesheet" href="css/default.css" type="text/css" /><link rel="stylesheet" href="css/lightbox.css" type="text/css" />
+
+    <script type="text/javascript" src="ScriptLibrary/Microsoft.Web.Preview/1.0.61025.0/Release/prototype.js"></script>
+
+    <script type="text/javascript" src="ScriptLibrary/Microsoft.Web.Preview/1.0.61025.0/Release/lightbox.js"></script>
+
+    <script language="javascript" src="js/Layout.js"></script>
+
+</head>
+<body onload="SetTime();esconde_aeroporto();">
+    <form name="form1" method="post" action="index_2.aspx" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkzMjYxMzE5NQ9kFgICAw9kFhQCAg9kFgJmD2QWCAIBDw8WAh4ISW1hZ2VVcmwFFH4vaW1nL2lkaW9tYV9icmEuZ2lmZGQCAw8PFgIfAAUYfi9pbWcvaWRpb21hX2V1YV9vZmYuZ2lmZGQCBQ8PFgIfAAUYfi9pbWcvaWRpb21hX2VzcF9vZmYuZ2lmZGQCBw8PFgIfAAUYfi9pbWcvaWRpb21hX2ZyYV9vZmYuZ2lmZGQCAw9kFgJmD2QWAmYPZBYCZg9kFgYCAQ8PFgIfAAUXfi9pbWcvdF9pbmZvcm1hY29lcy5naWZkZAIDDw8WAh4EVGV4dAU+QWVyb3BvcnRvIEludGVybmFjaW9uYWwgZGUgTmF2ZWdhbnRlcyAtIE1pbmlzdHJvIFZpY3RvciBLb25kZXJkZAIFDw8WAh8BBbABPGI+RGlzdMOibmNpYSBkbyBjZW50cm86IDwvYj4zLDUga208YnI+PGJyPjxiPlRlbGVmb25lOiA8L2I+KDQ3KSAzMzQyLTkyMDAgPGJyPjxicj48Yj5FbmRlcmXDp286IDwvYj4gUnVhIE9zbWFyIEdheWEsIG7CsCAxMjk3LCBCYWlycm8gTWVpYSBQcmFpYSAgICAgLCA8YnI+TmF2ZWdhbnRlcyAgLSBTQzxicj5kZAIED2QWAmYPZBYGAgEPDxYCHwEFFVNlbGVjaW9uZSBvIEFlcm9wb3J0b2RkAgMPEA8WCB4KRGF0YU1lbWJlcgUKQWVyb3BvcnRvcx4NRGF0YVRleHRGaWVsZAUKdk5vbV9jdXJ0bx4ORGF0YVZhbHVlRmllbGQFCENPRF9JQ0FPHgtfIURhdGFCb3VuZGdkEBUtC0FMVEFNSVJBLVBBCkFSQUNBSlUtU0UJQkVMw4lNLVBBHEJFTE8gSE9SSVpPTlRFIC0gUEFNUFVMSEEtTUcbQkVMTyBIT1JJWk9OVEUgLSBULk5FVkVTLU1HDEJPQSBWSVNUQS1SUhFDQU1QSU5BIEdSQU5ERS1QQg9DQU1QTyBHUkFOREUtTVMLQ0FSQUrDgVMtUEELQ09SVU1Cw4EtTVMSQ1JVWkVJUk8gRE8gU1VMLUFDCkNVSUFCw4EtTVQLQ1VSSVRJQkEtUFIRRk9aIERPIElHVUHDh1UtUFILR09Jw4JOSUEtR08NSU1QRVJBVFJJWi1NQQ5KT0FPIFBFU1NPQS1QQgxKT0lOVklMTEUtU0MUSlVBWkVJUk8gRE8gTk9SVEUtQ0ULTE9ORFJJTkEtUFIKTUFDQVDDgS1BUApNQUNFScOTLUFMCU1BTkFVUy1BTQpNQVJBQsOBLVBBEE1PTlRFUyBDTEFST1MtTUcNTkFWRUdBTlRFUy1TQwlQQUxNQVMtVE8PUEFVTE8gQUZPTlNPLUJBClBFTE9UQVMtUlMMUEVUUk9MSU5BLVBFEFBPUlRPIFZFTEhPIC0gUk8JUkVDSUZFLVBFDVJJTyBCUkFOQ08tQUMcUklPIERFIEpBTkVJUk8gLSBTLkRVTU9OVC1SSgxTQU5UQVLDiU0tUEEXU0FPIEpPU8OJIERPUyBDQU1QT1MtU1ALU0FPIExVSVMtTUEYU0FPIFBBVUxPIC0gQ09OR09OSEFTLVNQDFRBQkFUSU5HQS1BTQhURUbDiS1BTQtURVJFU0lOQS1QSQpVQkVSQUJBLU1HDlVCRVJMw4JORElBLU1HDVVSVUdVQUlBTkEtUlMMUEFSTkHDjUJBLVBJFS0EU0JIVARTQkFSBFNCQkUEU0JCSARTQkNGBFNCQlYEU0JLRwRTQkNHBFNCQ0oEU0JDUgRTQkNaBFNCQ1kEU0JDVARTQkZJBFNCR08EU0JJWgRTQkpQBFNCSlYEU0JKVQRTQkxPBFNCTVEEU0JNTwRTQkVHBFNCTUEEU0JNSwRTQk5GBFNCUEoEU0JVRgRTQlBLBFNCUEwEU0JQVgRTQlJGBFNCUkIEU0JSSgRTQlNOBFNCU0oEU0JTTARTQlNQBFNCVFQEU0JURgRTQlRFBFNCVVIEU0JVTARTQlVHBFNCUEIUKwMtZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnFgECGWQCBg8PFgIfAQUSUEVTUVVJU0EgQVZBTsOHQURBFgIeB09uQ2xpY2sFHWphdmFzY3JpcHQ6bW9zdHJhX3Blc3F1aXNhKCk7ZAIFD2QWAmYPZBYEAgEPDxYCHwEFFFBvciBDb21wYW5oaWEgQcOpcmVhZGQCAw8QDxYIHwIFBlRhYmxlMR8DBQdOT01fQ0lBHwQFDVNJR19DSUFfQUVSRUEfBWdkEBUECVNlbGVjaW9uZQRBWlVMA0dPTANUQU0VBAlTZWxlY2lvbmUDQVpVA0dMTwNUQU0UKwMEZ2dnZ2RkAgYPZBYCZg9kFgQCAw8PFgIfAQUSUG9yIG7Dum1lcm8gZG8gdm9vZGQCCA8PFgIfAQUaU0VMRUNJT05BUiBPVVRSTyBBRVJPUE9SVE8WAh8GBR9qYXZhc2NyaXB0OmVzY29uZGVfYWVyb3BvcnRvKCk7ZAIHD2QWAmYPZBYCAgEPDxYEHghDc3NDbGFzcwUIdm9vbmxpbmUeBF8hU0ICAmRkAggPZBYCZg9kFgQCAQ8PFgIfAQUcVmlzdWFsaXphciB2b29zIGZpbmFsaXphZG9zP2RkAgMPEA9kFgIeB29uY2xpY2sFJ211ZGFGaW5hbGl6YWRvcygnQlJBJywnY2hrRmluYWxpemFkb3MnKWRkZAIJDw8WAh8BBQROw6NvZGQCCg9kFgJmD2QWBGYPDxYCHwEFIURlc2VqYSBBdHVhbGl6YcOnw6NvIEF1dG9tw6F0aWNhP2RkAgEPDxYCHwEFA1NpbWRkAgsPZBYCZg9kFgpmD2QWAmYPDxYCHwAFGX4vaW1nL2FiYV9jaGVnYWRhc19vbi5naWZkZAIBD2QWAmYPDxYCHwAFGn4vaW1nL2FiYV9wYXJ0aWRhc19vZmYuZ2lmZGQCAg8PFgIfAQU+QWVyb3BvcnRvIEludGVybmFjaW9uYWwgZGUgTmF2ZWdhbnRlcyAtIE1pbmlzdHJvIFZpY3RvciBLb25kZXJkZAIDDxQrAA0PFgYeDUVtcHR5RGF0YVRleHQFLzwvYnI+TsOjbyBow6Egdm9vcyBwYXJhIHN1YSBwZXNxdWlzYS48L2JyPjwvYnI+HwVnHgtfIUl0ZW1Db3VudAILZBAWAmYCARYCPCsABQEAFgIeCkhlYWRlclRleHQFCkNpYSBBw6lyZWE8KwAFAQAWAh8MBQNWb28WAgIGAgZkFgQfBwUIY2hlZ2FkYTIfCAICZBYEHwcFCGNoZWdhZGEzHwgCAhYEHwcFCGNoZWdhZGE0HwgCAmRkZGRkZBYCZg9kFhoCAQ9kFhBmD2QWBgIBDw8WAh8ABRhpbWcvbG9nb19zaXNvL0lNX0dMTy5qcGcWAh4DYWx0BQNHT0xkAgMPDxYCHwAFDWltZy9sZW1lXy5naWYWAh8NBQNHT0xkAgUPDxYCHwEFA0dPTGRkAgEPZBYCAgEPDxYCHwEFBTAyMjU2ZGQCAg9kFgQCAQ8PFgIfAQUOUmlvIGRlIEphbmVpcm9kZAIDDw8WAh8BBQJSSmRkAgMPZBYCAgEPDxYCHwEFBTE1LzAzZGQCBA9kFgICAQ8PFgIfAQUFMTM6MDVkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHgtOYXZpZ2F0ZVVybAWRA2RldGFsaGVfdm9vLmFzcHg/NS9Ycm4xU2xGbWVUclIvUEwzL01wdUZnQTJpcHB6eFNKSWpaSkVpSWZZMzNQcUNuWFV4bGptTUVDdTQ4Y0QxNCtpajNvRzNKNFpGOHk0K3lvekhLYjBlVjlCSGUwODNpak5GaGV4TjRMdllIYVlqdCswVzZ0R1F1NSt4QlArTmY3aFRxK0RZbFNwTjhid3B0SlI5UkZQQ3gxSmw0Qys3NGxYcDdobjhRMnlzbEkxR0wwVlhxSDEvbWY3cG9tdFIwZXNXSXhON2JhYUxsOVorak8ySm0zYWxVVE9rekU5bi9VdmJXTVhyQ1VqYXNiaGRiZjZxeDk0enA3VW5WNzhYK2FUdmRLSTI5ZUlnREhEeGhIbndzaWxnNmk4Tkt6SW5DYW5VVzFTOVcvdytGcUJWZ2lNdnhnYnlFS2x3dm1JSFYwUk1aYUk0QVZPSHFnRTFHRFZNS3Iwb1k4bS9VaDVNRFlQTzU3NGdHUGkrME9sVEJYRmxZRjBvOXc1N1ViY2o4ZGQCAw8PFgIfAQUBM2RkAgUPDxYCHwEFATNkZAIHDw8WAh8BBQE0ZGQCCQ8PFgIfAQUBQWRkAgIPZBYQZg9kFgYCAQ8PFgIfAAUYaW1nL2xvZ29fc2lzby9JTV9UQU0uanBnFgIfDQUDVEFNZAIDDw8WAh8ABQ1pbWcvbGVtZV8uZ2lmFgIfDQUDVEFNZAIFDw8WAh8BBQNUQU1kZAIBD2QWAgIBDw8WAh8BBQUwMzE4MGRkAgIPZBYEAgEPDxYCHwEFClPDo28gUGF1bG9kZAIDDw8WAh8BBQJTUGRkAgMPZBYCAgEPDxYCHwEFBTE1LzAzZGQCBA9kFgICAQ8PFgIfAQUFMTQ6MDVkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHw4FkQNkZXRhbGhlX3Zvby5hc3B4PzUvWHJuMVNsRm1lVHJSL1BMMy9NcHVGZ0EyaXBwenhTSklqWkpFaUlmWTMzUHFDblhVeGxqbU1FQ3U0OGNEMTQraWozb0czSjRaRjh5NCt5b3pIS2IwZVY5QkhlMDgzaWpORmhleE40THZZbXYvMlpOSEcrNEIzRzROWTRPM0ExWlZ0K0ZpcFlQaytwWE93U1N2WHNnNXZuVGZhczVITStNc3pLeFNvNlJWaDRZZkMwdDg5WHpaTU9TTDlSWDV6SnQxdDEweDhlZFNtMWV0S0hzdW5BaWJqZXU5cHRvMW9vbXRJQmZ3QjJhZ0FtK2JwUkVHdUlpNFZuUXVxMmM3akR2M28zZ3ZZZC9wczJHbUpUMU9mNHErSFhPOTRTMDVNWEZvdHdHME9yNWdpL0I5aFlieEh1YlF0anY0Q0NiR0FpWHBYdkEzZkdUSHpMTVplSmtNOHh6MWUyTk03K2s1MXhHM2NqVmVxd2pSaWhveFdlSG93VEJ3RW1LK1l1a3JLamRkAgMPDxYCHwEFATRkZAIFDw8WAh8BBQE0ZGQCBw8PFgIfAQUBMWRkAgkPDxYCHwEFAUFkZAIDD2QWEGYPZBYGAgEPDxYCHwAFGGltZy9sb2dvX3Npc28vSU1fQVpVLmpwZxYCHw0FBEFaVUxkAgMPDxYCHwAFDWltZy9sZW1lXy5naWYWAh8NBQRBWlVMZAIFDw8WAh8BBQRBWlVMZGQCAQ9kFgICAQ8PFgIfAQUFMDQxNjVkZAICD2QWBAIBDw8WAh8BBQhDYW1waW5hc2RkAgMPDxYCHwEFAlNQZGQCAw9kFgICAQ8PFgIfAQUFMTUvMDNkZAIED2QWAgIBDw8WAh8BBQUxNDozNWRkAgUPZBYCAgEPDxYCHwEFAy0gLWRkAgcPZBYCAgEPDxYCHwEFCFByZXZpc3RvZGQCCA9kFgoCAQ8PFgIfDgWRA2RldGFsaGVfdm9vLmFzcHg/NS9Ycm4xU2xGbWVUclIvUEwzL01wdUZnQTJpcHB6eFNKSWpaSkVpSWZZMzNQcUNuWFV4bGptTUVDdTQ4Y0QxNCtpajNvRzNKNFpGOHk0K3lvekhLYjBlVjlCSGUwODNpak5GaGV4TjRMdlkzUnlTNnU3djlrRTBZRUxZZ2xlZ3BqRlhvRmd1Q3o1a21MNlhXTFF4YmE0ZzRwbVIwWEVERElTTlY1SGR6U1JIMFo3Mk9MRDQ4WXB3M0tkMzJPRjRPalVIL21PQ1hUdHZhZUo1aUdBWTJ4Y2Zad0gxQ1J3Z24wMDBsSGg2Sksrbk1BbmxESTdobnprV0NXYzlLYStjMUxmRXVuWnRHNVVxbVhoazk1RzBHYWtMdXg5UTR1N3U3empNMkdURjJQUWlQVGo5cEpkaUtkZDI4UFdWbGJWSHRHTVhyNEVaWk81aE1McGVYSUZmNk1NSjZMd3pDaThxaWJhM0ZteldTcnBZNDE2bG93SDU5Tm5mMkRKTndiMEp5ZGQCAw8PFgIfAQUBNWRkAgUPDxYCHwEFATVkZAIHDw8WAh8BBQEyZGQCCQ8PFgIfAQUBQWRkAgQPZBYQZg9kFgYCAQ8PFgIfAAUYaW1nL2xvZ29fc2lzby9JTV9HTE8uanBnFgIfDQUDR09MZAIDDw8WAh8ABQ1pbWcvbGVtZV8uZ2lmFgIfDQUDR09MZAIFDw8WAh8BBQNHT0xkZAIBD2QWAgIBDw8WAh8BBQUwMTM1NmRkAgIPZBYEAgEPDxYCHwEFClPDo28gUGF1bG9kZAIDDw8WAh8BBQJTUGRkAgMPZBYCAgEPDxYCHwEFBTE1LzAzZGQCBA9kFgICAQ8PFgIfAQUFMTY6NTVkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHw4FkQNkZXRhbGhlX3Zvby5hc3B4PzUvWHJuMVNsRm1lVHJSL1BMMy9NcHVGZ0EyaXBwenhTSklqWkpFaUlmWTMzUHFDblhVeGxqbU1FQ3U0OGNEMTQraWozb0czSjRaRjh5NCt5b3pIS2IwZVY5QkhlMDgzaWpORmhleE40THZaN3RTdDVqZ2JGSmh3aGgzZk5LNjl2bk1qV0REVW5Oa3c1b01qWXhUYUlPMzNhQXVHLzBkdi94MktPZXJnVzZaNkRIbE5HTnF0UTVmVytmZEFoZU5kdndPUGFNaTNXejg4c2RWT3JEanZxUmk4QmNoVmRKcklkRmFqVkVwYVdXWG9idEhQMWxZK2tTRFkvNWNER1RqN2VpQUdnYm5OVytKQ0Y5aTlkNUZDa1BucEl0M0N4bis0M1VRN0xBWFI3NE5TSEdqUGc0UHhFNFhMRTIvUitTZHlqS3dNZkVJK0cwREhGOXU1cFd2a2hJamllbWVmanlKSHJ1ajAvUmZ2YThyMThiL1hiNU9QeWk3eHYxUjVoQS9EYWRkAgMPDxYCHwEFATZkZAIFDw8WAh8BBQE2ZGQCBw8PFgIfAQUBNGRkAgkPDxYCHwEFAUFkZAIFD2QWEGYPZBYGAgEPDxYCHwAFGGltZy9sb2dvX3Npc28vSU1fQVpVLmpwZxYCHw0FBEFaVUxkAgMPDxYCHwAFDWltZy9sZW1lXy5naWYWAh8NBQRBWlVMZAIFDw8WAh8BBQRBWlVMZGQCAQ9kFgICAQ8PFgIfAQUFMDQ1NTlkZAICD2QWBAIBDw8WAh8BBQxQb3J0byBBbGVncmVkZAIDDw8WAh8BBQJSU2RkAgMPZBYCAgEPDxYCHwEFBTE1LzAzZGQCBA9kFgICAQ8PFgIfAQUFMTg6NTBkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHw4FkQNkZXRhbGhlX3Zvby5hc3B4PzUvWHJuMVNsRm1lVHJSL1BMMy9NcHVGZ0EyaXBwenhTSklqWkpFaUlmWTMzUHFDblhVeGxqbU1FQ3U0OGNEMTQraWozb0czSjRaRjh5NCt5b3pIS2IwZVY5QkhlMDgzaWpORmhleE40THZZRVozRkdRS0pkQ3BNc1FUemhmcjQ2RUk1UEdlSEhiRjNtUDl4dzdmcFBHKzdNTkUrY2dONnJPMlpjL2IrbFFxUGxzWk5GTEJCM2xVaEtTS1ZrcUxBNTJvM2hoMGxNRm9tcFQvbnpkMGJCQWVQd1V1RzNNS3BFUTdOdjhBV3dpeW0rWjIrU1RyYjYzZVdlQktkbitMcnNIWXJaaUZYVERYT04ybitNa3d4cVI0TjVQMTVyVjhhZ2toUDJqc2NNMDJFOUlibnRUbnAwd0JvZUxMWllSbTF5cjM5ZjVDOG5Hb0N2V3NaaTBvRGZLbWFkKzlRY0lvdVFLbkNLTDdnVDlIa2JmenJPSU9ydEpTM25POVlHdUFEemRkAgMPDxYCHwEFATdkZAIFDw8WAh8BBQE3ZGQCBw8PFgIfAQUBMmRkAgkPDxYCHwEFAUFkZAIGD2QWEGYPZBYGAgEPDxYCHwAFGGltZy9sb2dvX3Npc28vSU1fVEFNLmpwZxYCHw0FA1RBTWQCAw8PFgIfAAUNaW1nL2xlbWVfLmdpZhYCHw0FA1RBTWQCBQ8PFgIfAQUDVEFNZGQCAQ9kFgICAQ8PFgIfAQUFMDMxNDhkZAICD2QWBAIBDw8WAh8BBQpTw6NvIFBhdWxvZGQCAw8PFgIfAQUCU1BkZAIDD2QWAgIBDw8WAh8BBQUxNS8wM2RkAgQPZBYCAgEPDxYCHwEFBTE5OjAwZGQCBQ9kFgICAQ8PFgIfAQUFMTk6MDBkZAIHD2QWAgIBDw8WAh8BBQlDYW5jZWxhZG9kZAIID2QWCgIBDw8WAh8OBZEDZGV0YWxoZV92b28uYXNweD81L1hybjFTbEZtZVRyUi9QTDMvTXB1RmdBMmlwcHp4U0pJalpKRWlJZlkxcWVlYkJwNmpVRnFZbVlwelJwbmUyK29vd1AwYXhaemhDZ3FEdCt2bGtFbGRubjI1Vkl1eWd0UklhM0lrK1NUZkVHLzl5TXBVSnQxYlB5eEN5NVlLQ1ZWdUhrVUJVUmQyMXNsTnZFNndpVkRxZWJIenkwTUx4cWN4YWlkMTROTHB6dWQ2NTA3VUZlWWs4UTNjbGFEdU4wQ0syMzhCT2VHZkp2KzJKZWFMWTJLYVNQK2tCVmZBZHR4REF6RERKdHBoaWV1aThNQmlkZnJFSU0veVV1Z0o0WElWWjlWR1RYT3U0b0IzdjQwWW5DY3FzMFlQMzhkREwrdHFpM1dGT1MrUUpEbkViTE1ES3ovRnVzSnNodGIvcGtXa0tTTlM2cFNlN3J5OTIyYkw3d1FSYnNMMFRzMjl1T0JDTjRiemd5QWRXNlJRc1kzMlZIZ2ExdzJ2NFVXM1pkZAIDDw8WAh8BBQE4ZGQCBQ8PFgIfAQUBOGRkAgcPDxYCHwFlZGQCCQ8PFgIfAQUBQWRkAgcPZBYQZg9kFgYCAQ8PFgIfAAUYaW1nL2xvZ29fc2lzby9JTV9BWlUuanBnFgIfDQUEQVpVTGQCAw8PFgIfAAUNaW1nL2xlbWVfLmdpZhYCHw0FBEFaVUxkAgUPDxYCHwEFBEFaVUxkZAIBD2QWAgIBDw8WAh8BBQUwNDU1OGRkAgIPZBYEAgEPDxYCHwEFCENhbXBpbmFzZGQCAw8PFgIfAQUCU1BkZAIDD2QWAgIBDw8WAh8BBQUxNS8wM2RkAgQPZBYCAgEPDxYCHwEFBTE5OjE1ZGQCBQ9kFgICAQ8PFgIfAQUDLSAtZGQCBw9kFgICAQ8PFgIfAQUIUHJldmlzdG9kZAIID2QWCgIBDw8WAh8OBZEDZGV0YWxoZV92b28uYXNweD81L1hybjFTbEZtZVRyUi9QTDMvTXB1RmdBMmlwcHp4U0pJalpKRWlJZlkzM1BxQ25YVXhsam1NRUN1NDhjRDE0K2lqM29HM0o0WkY4eTQreW96SEtiMGVWOUJIZTA4M2lqTkZoZXhONEx2WUtTV2QyM1Z3ZXNPQmZjRk1tOFM5RmovYkpRRUhPOGk5bWlTTDdGalpCWjVHUDcvMW9yVlRYZExBR1pDQ2JlWG8zcXZtdDdLZUVhRGVLR2x6bXdLZWk2SlBUa1FJUGJoeWJGRThkSUpzMy9BajlqWFJDckxLa0Vodko1cFQvQ3BEYXc1WXcvY1dqdUhmQkttVjh6cVhuV1VvcDhKVlIzV0E0MDZBaEhvdm1EMjFMMzlMOENnd3VvTVB1YjF1eTlMY2t5S2VhaDBITVJzTjVHSllzM1o4eCsvMHY1bGwzTExHb2NteUM3eTBPVlBwcVBJbHczS0YrS1FOWXovMHdXT2hWd2M5STV6L1U1azNtNUUzY2lYNWdkZAIDDw8WAh8BBQE5ZGQCBQ8PFgIfAQUBOWRkAgcPDxYCHwEFATJkZAIJDw8WAh8BBQFBZGQCCA9kFhBmD2QWBgIBDw8WAh8ABRhpbWcvbG9nb19zaXNvL0lNX1RBTS5qcGcWAh8NBQNUQU1kAgMPDxYCHwAFDWltZy9sZW1lXy5naWYWAh8NBQNUQU1kAgUPDxYCHwEFA1RBTWRkAgEPZBYCAgEPDxYCHwEFBTAzMzEyZGQCAg9kFgQCAQ8PFgIfAQUOR3VhcnVsaG9zIC0gU1BkZAIDDw8WAh8BBQJTUGRkAgMPZBYCAgEPDxYCHwEFBTE1LzAzZGQCBA9kFgICAQ8PFgIfAQUFMjA6MTBkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHw4FkQNkZXRhbGhlX3Zvby5hc3B4PzUvWHJuMVNsRm1lVHJSL1BMMy9NcHVGZ0EyaXBwenhTSklqWkpFaUlmWTMzUHFDblhVeGxqbU1FQ3U0OGNEMTQraWozb0czSjRaRjh5NCt5b3pIS2IwZVY5QkhlMDgzaWpORmhleE40THZhNWtRa2FCSSt0aWs0SFE3c1I4Mk5jSUlBZ1lhWU84NGptS0IvKy9BQnROckl6OUhnU2xWL1N3blVzMHJRZGxLbW0zbkVPdVRwM3gzL0tGallhZ0lkSWRrN1hqNFU3RHg5OTFLRGhTdHRETlJnYkVUTEFrYTkwR3V2ZE5vK2c2Q0lZOFdiK3hBQUpESGdlVFdhRGVncEFQZVpsNlFUTUYxQWxHZnN2VVljUXlhdFlRRHpJdUtqbmN5dFA5MzRhVEdra2p4S3B5TjVDMVczdGlXZ3RkV0NjYmRDQUhnZ3BzNHlWWFNsZzY0ZWVXVUV2a0QrMk5HQWNKZ2taZEU3MERRZHd2RkE4RzFiUm5LbWFaMnVuOWExcGRkAgMPDxYCHwEFAjEwZGQCBQ8PFgIfAQUCMTBkZAIHDw8WAh8BBQExZGQCCQ8PFgIfAQUBQWRkAgkPZBYQZg9kFgYCAQ8PFgIfAAUYaW1nL2xvZ29fc2lzby9JTV9BWlUuanBnFgIfDQUEQVpVTGQCAw8PFgIfAAUNaW1nL2xlbWVfLmdpZhYCHw0FBEFaVUxkAgUPDxYCHwEFBEFaVUxkZAIBD2QWAgIBDw8WAh8BBQUwNDcyMmRkAgIPZBYEAgEPDxYCHwEFCENhbXBpbmFzZGQCAw8PFgIfAQUCU1BkZAIDD2QWAgIBDw8WAh8BBQUxNS8wM2RkAgQPZBYCAgEPDxYCHwEFBTIzOjAwZGQCBQ9kFgICAQ8PFgIfAQUDLSAtZGQCBw9kFgICAQ8PFgIfAQUIUHJldmlzdG9kZAIID2QWCgIBDw8WAh8OBZEDZGV0YWxoZV92b28uYXNweD81L1hybjFTbEZtZVRyUi9QTDMvTXB1RmdBMmlwcHp4U0pJalpKRWlJZlkzM1BxQ25YVXhsam1NRUN1NDhjRDE0K2lqM29HM0o0WkY4eTQreW96SEtiMGVWOUJIZTA4M2lqTkZoZXhONEx2WW5VVFlqOURwczdFd2hLZ0JsWU9oZ29qRE8rMXZSMVZuY0ZSNWRmVEQxK2RUb0R4TCtneENTNmcwTm1aKytVbjJ6MlNaaEg4aXJ1NjJ3MHorN0w0c3pLUW9MVDlDeXNSOXAxUEo0MC83RmxXMnJwV29YeHlwSDU4M0xWMWZhQmVldElJWjUreVhWU1lreTU5MkRnS2dqTS8yREZLWlZ6MUhmRG8yaS9rcnR4L0JrSkpSdzNhalFXOXZYU1ptUkg4K1NnaFNXSGxXS09VK1pKb3V4NGxET1plTTNtdVoraHZpMnFtL2tFVHVPWVVObW9LQkh3K3hLSDZ3UXpFdUMwNkcyMzdjMkRrYno1anRMT2R1eXRQazVkZAIDDw8WAh8BBQIxMWRkAgUPDxYCHwEFAjExZGQCBw8PFgIfAQUBMmRkAgkPDxYCHwEFAUFkZAIKD2QWEGYPZBYGAgEPDxYCHwAFGGltZy9sb2dvX3Npc28vSU1fVEFNLmpwZxYCHw0FA1RBTWQCAw8PFgIfAAUNaW1nL2xlbWVfLmdpZhYCHw0FA1RBTWQCBQ8PFgIfAQUDVEFNZGQCAQ9kFgICAQ8PFgIfAQUFMDM1NTdkZAICD2QWBAIBDw8WAh8BBQ5HdWFydWxob3MgLSBTUGRkAgMPDxYCHwEFAlNQZGQCAw9kFgICAQ8PFgIfAQUFMTYvMDNkZAIED2QWAgIBDw8WAh8BBQUwODo1NWRkAgUPZBYCAgEPDxYCHwEFAy0gLWRkAgcPZBYCAgEPDxYCHwEFCFByZXZpc3RvZGQCCA9kFgoCAQ8PFgIfDgWRA2RldGFsaGVfdm9vLmFzcHg/NS9Ycm4xU2xGbWVUclIvUEwzL01wdUZnQTJpcHB6eFNKSWpaSkVpSWZZMzNQcUNuWFV4bGptTUVDdTQ4Y0QxNCtpajNvRzNKNFpGOHk0K3lvekhLYjBlVjlCSGUwODNpak5GaGV4TjRMdlloZHEzUXVYNFM5RjhaeG4wRkc3d3hoeUxRb1RJalo2eU42dW9OMU1IQk9zVE1KMmZyU0U0QzJnZnZ2a1ZGR0VvTmhYOTIzV1Y4a3dadEFMZXorVzJtbFg1NDkyUGM3NkZtZys0ekhtMmhiWVY5czUvWlZKQXRtOTN2M3BXZzgzYWVubzdhVGtDSFRKejBodjNIK3Q4WmhXU0pmTVF3djBjb0dLaGpNWFlsNWJMR2lvWmRTbFkrWHc0YzdocjlDYXZ3VjJIYmNJbnNmWEpzeTBDd0FYZUpwTjdkTVVQSkhaRmNGai85U0M4Q1N6d2lXNy9RSmJGOHlyanFHSmJoZWhFRG5hTmpMRFd4Z0xiR2hhTjhEWkkxZGQCAw8PFgIfAQUCMTJkZAIFDw8WAh8BBQIxMmRkAgcPDxYCHwEFATFkZAIJDw8WAh8BBQFBZGQCCw9kFhBmD2QWBgIBDw8WAh8ABRhpbWcvbG9nb19zaXNvL0lNX0FaVS5qcGcWAh8NBQRBWlVMZAIDDw8WAh8ABQ1pbWcvbGVtZV8uZ2lmFgIfDQUEQVpVTGQCBQ8PFgIfAQUEQVpVTGRkAgEPZBYCAgEPDxYCHwEFBTA0MzYyZGQCAg9kFgQCAQ8PFgIfAQUIQ2FtcGluYXNkZAIDDw8WAh8BBQJTUGRkAgMPZBYCAgEPDxYCHwEFBTE2LzAzZGQCBA9kFgICAQ8PFgIfAQUFMTA6MzBkZAIFD2QWAgIBDw8WAh8BBQMtIC1kZAIHD2QWAgIBDw8WAh8BBQhQcmV2aXN0b2RkAggPZBYKAgEPDxYCHw4FkQNkZXRhbGhlX3Zvby5hc3B4PzUvWHJuMVNsRm1lVHJSL1BMMy9NcHVGZ0EyaXBwenhTSklqWkpFaUlmWTMzUHFDblhVeGxqbU1FQ3U0OGNEMTQraWozb0czSjRaRjh5NCt5b3pIS2IwZVY5QkhlMDgzaWpORmhleE40THZaRFIydlo4M0daTnZXVGxPSXdsOWZHQXlGWVlDOVNibzBJU1dJYjc3NEcwR2hKUExtZFlKVTNpY2U5VFhVeGZjMS9GMU52R2w2R21JNzFKM283VVlleWdpMEN1cjhxbUk0M0xFY3dDWDJKSVl4N0Vla1lSZFUzaVFpRzJNUlQ5NjMxMEE3SWhQcnd2SFYvZGFQV1RTNzlxK2ROK20vTHNxU1Y5dnZ1cFRyK1FIcTllRWJFSUxTS2lxSkYzSnlVWkpzeTVOek5ZMTVhUkszdVYzUUVBaXRZVHo4TjBjVEptMjQ5Rnd1SWlGM1BvZXRnV09LZmE3UVMvZlpJT2V1QUZETDJVR3Z6SXU4RHcwb1JxQ3ArVzBWY2RkAgMPDxYCHwEFAjEzZGQCBQ8PFgIfAQUCMTNkZAIHDw8WAh8BBQEyZGQCCQ8PFgIfAQUBQWRkAgwPDxYCHgdWaXNpYmxlaGRkAg0PDxYCHw9oZGQCBA8PFgIfAQUpMTUvMDMvMjEgMTE6MjI6MjIgKEhvcsOhcmlvIGRlIEJyYXPDrWxpYSlkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUKaWRpb21hX2JyYQUKaWRpb21hX2V1YQUKaWRpb21hX2VzcAUOY2hrRmluYWxpemFkb3MFCGdyZF92b29zDzwrAAoBCAIBZKWKZ71hyY88ePkb5dJF7XuQvGr1" />
+
+
+<script src="/voos/ScriptResource.axd?d=V1TojJA09BiIn0a63vEMANamif_HV4D3N0Om0dCnHqF5-hgjRFNebNFSFRpSUwxsK6egCCSU1dNcllgZYIz1My5A1xHZJ6xNMYuwcyMjO3a6-1uif54QzRWj4gw4p6k67Y61W-45IydeXGHFi0QYnX4i_2Y1&amp;t=637376636518365881" type="text/javascript"></script>
+<script src="ScriptLibrary/Microsoft.Web.Preview/1.0.61025.0/Release/prototype.js" type="text/javascript"></script>
+<script src="ScriptLibrary/Microsoft.Web.Preview/1.0.61025.0/Release/lightbox.js" type="text/javascript"></script>
+<script src="/voos/ScriptResource.axd?d=Gua6VDwI9602zwTA8LVPcGj65YW6mQ8T8DLTJlP3TZt470IWP0Jm7PNtuPLkaqvZVRpL_dWNPrBHa7PFpUORAitG-_dI0DZXAFcoAk04yVNyFzqWUZX1bA2W0IZURhL3ddZyFPE6sxmFx-Mi38AfxabM3Lc1&amp;t=636246705000000000" type="text/javascript"></script>
+<script src="/voos/ScriptResource.axd?d=RtL7_qTtENLpaRvwSzya35xt6PWAUEXodftHAEl8jINTeMIz0fM5I56flftLqxq4yRL9-Y7Cz8RAdGiO0dUXaNehLXPwk-KSLN-R6t7GeMky9nufCGZAJEZsf9RTY5rL8L62PTbH54LeM7EH2dR51Pf-0Mvht4h47V30EGOqTDGirP3C0&amp;t=636246705000000000" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EB3883C2" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWPgKE1falAQLL76XDDALK7+mxAgLM762yAgLXpouBCgLaldeLBwKlgrW4DAKlgrGZDQKAq6v+DgKlgonjDwL44qyFAwKAq7/bBQKAq7u4BgKAq5vhDAKAq/uHAQKAq+eqCgKAq8OXCgLR58yfDQK8jKatAwKyz6TaDAKd9P7pAgKd9PaKDQKd9OKxBgLDi+6UAwKusLiFBwKusNCBDQL2/oKxCQKusPi3DAKusIAVAonZwegLAo+Y8M0FAobqzakPAo+YhKkMAo+YmIIDAo+YoOEIAvWvpOkBAvWv1PoEAvWvtKMJAtDU6fgBAtDUmYwDAtDUwcICAtDU0fwLArv9g9QCArv967wFArv91+MOAobqvYgNAobqhZgGAobq4YIGAo+YkKcPAoXZ9dsDApTS4ZwEAu3onrMOAuXE+IYEAsiyi9gPAsTcw7ABAvTrgMYBAtT1quIHAuO15c4LAtaUz5sCAur2yqwOArLLnscNApK5xqYHI1ZIVnJaNqmHAKd71FzeReo58Q4=" />
+    
+    <iframe src="barra_institucional_nova.html" style="margin:0; padding:0;border:none;" height="35" width="105%" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+    <div class="containergeral">
+        <div class="conteudo">
+            <div id="UpdateProgress1" style="display:none;">
+	
+                    <div id="Processando1_Panel1" class="carregando" align="center">
+		
+        &nbsp;&nbsp;&nbsp;&nbsp;Processando sua solicitação...</ br><img id="Processando1_Image1" alt="Carregando" align="absmiddle" src="img/ajax-loader.gif" border="0" />
+
+	</div>
+                
+</div>
+           
+            <div class="polaroide" style="left: 14px; top: 0px">
+                <br />
+                <div class="lingeral">
+                    <div title="Infraero" class="logo" style="left: 11px; top: 0px">
+                    </div>
+                    <div id="LogoVoos">
+                    </div>
+                    <div class="idiomas">
+                        <div id="update_idiomas">
+	
+                                <input type="image" name="idioma_bra" id="idioma_bra" alt="Português" src="img/idioma_bra.gif" border="0" />
+                                <input type="image" name="idioma_eua" id="idioma_eua" alt="Inglês" src="img/idioma_eua_off.gif" border="0" />
+                                <input type="image" name="idioma_esp" id="idioma_esp" alt="Espanhol" src="img/idioma_esp_off.gif" border="0" />
+                                
+                            
+</div>
+                    </div>
+                </div>
+
+                <div id="update_img_partidas">
+	
+                        <div id="DIV_img_top" class="chegada" title="chegada">
+                        </div>
+                        <div style="left: 512px" id="DIVPesquisa" class="boxpesquisa" title="Informações">
+                            <span id="update_info_aeroporto">
+                                    <div class="linmenulateral" style="left: 7px; width: 91%; top: 0px">
+                                        <img class="png" height="22" src="img/img_info.png" width="22" align="absMiddle" />&nbsp;<img id="img_txt_informacoes" class="png" align="absMiddle" alt="Informações" src="img/t_informacoes.gif" border="0" /></div>
+                                    <div style="left: 7px; top: 0px; width: 93%;" class="linmenulateral">
+                                        <span id="lbl_nom_aeroporto">Aeroporto Internacional de Navegantes - Ministro Victor Konder</span>
+                                        <br />
+                                        <br />
+                                        <span id="lbl_des_aeroporto"><b>Distância do centro: </b>3,5 km<br><br><b>Telefone: </b>(47) 3342-9200 <br><br><b>Endereço: </b> Rua Osmar Gaya, n° 1297, Bairro Meia Praia     , <br>Navegantes  - SC<br></span>
+                                    </div>
+                                </span>
+                        </div>
+                    
+</div>
+                &nbsp;
+            </div>
+
+            <div>
+                <a href="https://pt.surveymonkey.com/r/NWNVKJL" target="_blank">
+                    <img class="banner" src="img/banner_voos_pesquisa_portal.gif" />
+                </a>
+                <a href="http://www.infraero.gov.br/images/stories/guia/2015/guia_port.pdf" target="_blank">
+                    <img class="banner" src="img/banner_voos_guia_passageiro.gif" />
+                </a>
+            </div>
+
+            <br />
+
+            <div class="lingeral">
+                <div id="Busca">
+                    <div id="BuscaAero">
+                        <span id="update_combo_lista_aeroportos">
+                                <div class="linmenulateral">
+                                    <span id="msgSelAeroporto">Selecione o Aeroporto</span></div>
+                                <div class="linmenulateral" style="left: 7px; top: 0px; width: 780px;">
+                                    <select name="dpl_aeroporto" id="dpl_aeroporto" class="select">
+	<option value="SBHT">ALTAMIRA-PA</option>
+	<option value="SBAR">ARACAJU-SE</option>
+	<option value="SBBE">BEL&#201;M-PA</option>
+	<option value="SBBH">BELO HORIZONTE - PAMPULHA-MG</option>
+	<option value="SBCF">BELO HORIZONTE - T.NEVES-MG</option>
+	<option value="SBBV">BOA VISTA-RR</option>
+	<option value="SBKG">CAMPINA GRANDE-PB</option>
+	<option value="SBCG">CAMPO GRANDE-MS</option>
+	<option value="SBCJ">CARAJ&#193;S-PA</option>
+	<option value="SBCR">CORUMB&#193;-MS</option>
+	<option value="SBCZ">CRUZEIRO DO SUL-AC</option>
+	<option value="SBCY">CUIAB&#193;-MT</option>
+	<option value="SBCT">CURITIBA-PR</option>
+	<option value="SBFI">FOZ DO IGUA&#199;U-PR</option>
+	<option value="SBGO">GOI&#194;NIA-GO</option>
+	<option value="SBIZ">IMPERATRIZ-MA</option>
+	<option value="SBJP">JOAO PESSOA-PB</option>
+	<option value="SBJV">JOINVILLE-SC</option>
+	<option value="SBJU">JUAZEIRO DO NORTE-CE</option>
+	<option value="SBLO">LONDRINA-PR</option>
+	<option value="SBMQ">MACAP&#193;-AP</option>
+	<option value="SBMO">MACEI&#211;-AL</option>
+	<option value="SBEG">MANAUS-AM</option>
+	<option value="SBMA">MARAB&#193;-PA</option>
+	<option value="SBMK">MONTES CLAROS-MG</option>
+	<option selected="selected" value="SBNF">NAVEGANTES-SC</option>
+	<option value="SBPJ">PALMAS-TO</option>
+	<option value="SBUF">PAULO AFONSO-BA</option>
+	<option value="SBPK">PELOTAS-RS</option>
+	<option value="SBPL">PETROLINA-PE</option>
+	<option value="SBPV">PORTO VELHO - RO</option>
+	<option value="SBRF">RECIFE-PE</option>
+	<option value="SBRB">RIO BRANCO-AC</option>
+	<option value="SBRJ">RIO DE JANEIRO - S.DUMONT-RJ</option>
+	<option value="SBSN">SANTAR&#201;M-PA</option>
+	<option value="SBSJ">SAO JOS&#201; DOS CAMPOS-SP</option>
+	<option value="SBSL">SAO LUIS-MA</option>
+	<option value="SBSP">SAO PAULO - CONGONHAS-SP</option>
+	<option value="SBTT">TABATINGA-AM</option>
+	<option value="SBTF">TEF&#201;-AM</option>
+	<option value="SBTE">TERESINA-PI</option>
+	<option value="SBUR">UBERABA-MG</option>
+	<option value="SBUL">UBERL&#194;NDIA-MG</option>
+	<option value="SBUG">URUGUAIANA-RS</option>
+	<option value="SBPB">PARNA&#205;BA-PI</option>
+
+</select>
+                                    <input type="submit" name="Button4" value="PESQUISA AVANÇADA" onclick="javascript:mostra_pesquisa();" id="Button4" class="botao6" />                             
+                                </div>
+                            </span>
+                        
+                    </div>
+                    <div id="Refinar" style="display: none; width: 87%; height: 15px;">
+                        <div id="BuscaCiaAerea">
+                            <span id="update_combo_companias_aereas">
+                                    <div class="linmenulateral">
+                                        <span id="msgSelCompanhia">Por Companhia Aérea</span></div>
+                                    <div class="linmenulateral">
+                                        <select name="Compania_aereas_dropdownlist1" id="Compania_aereas_dropdownlist1" class="botao6">
+	<option value="Selecione">Selecione</option>
+	<option value="AZU">AZUL</option>
+	<option value="GLO">GOL</option>
+	<option value="TAM">TAM</option>
+
+</select>
+                                        <input type="submit" name="btn_ok_compania_aerea" value="OK" onclick="javascript:return verificaEscolha('Compania_aereas_dropdownlist1','Selecione a Companhia Aérea');" id="btn_ok_compania_aerea" class="botao2" />
+                                    </div>
+                                </span>
+                        </div>
+                        <div id="BuscaNumVoo" style="height: 5px;">
+                            <div id="update_numero_voo">
+	
+                                    <input type="hidden" name="txt_water_box_ClientState" id="txt_water_box_ClientState" />
+                                    <div class="linmenulateral">
+                                        <span id="msgSelNumero">Por número do voo</span></div>
+                                    <div class="linmenulateral" style="left: 7px; top: 0px; width: 156%;" id="DIV1">
+                                        <input name="txt_num_voo" type="text" id="txt_num_voo" class="botao4" /><input type="submit" name="btn_ok_numero_voo" value="OK" onclick="javascript:if(document.getElementById('txt_num_voo').value == 'Número do Voo'){alert('Número do Voo é Obrigatório.');txt_num_voo.focus();return false;};" id="btn_ok_numero_voo" class="botao2" />&nbsp;
+                                        <input type="submit" name="Button3" value="SELECIONAR OUTRO AEROPORTO" onclick="javascript:esconde_aeroporto();" id="Button3" class="botao6" /></div>
+                                
+</div>
+                        </div>
+                    </div>
+                    &nbsp; &nbsp;
+                    <span id="Update_logo_voos">
+                            
+                        </span>
+                </div>
+                <div style="width: 99%; text-align: right; height: 15px; left: 4px; top: 1px;" class="linmenulateral">
+                    <span id="Update_Finalizados">
+                            <strong>&nbsp;&nbsp;
+                                <span id="msgFinalizados">Visualizar voos finalizados?</span>
+                                <input id="chkFinalizados" type="checkbox" name="chkFinalizados" onclick="mudaFinalizados('BRA','chkFinalizados');" />
+                            &nbsp;</strong>
+                        </span>
+                    <span id="msgAtualizacaoFinal">Não</span>
+                    <span id="Update_Atualizacao">
+                            <strong>&nbsp;&nbsp;
+                                <span id="msgAtualizacao">Deseja Atualização Automática?</span>                                
+                                <input id="Temporizador" onclick="mudaAtualizacao('BRA');"
+                                    checked="checked" type="checkbox" />&nbsp;</strong>
+                            <span id="msgAtualizacaoConf">Sim</span>
+                        </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="celconteudo" style="left: 0px; top: 0px">
+                    <span id="update_grid">
+                            <div class="lingeral" style="left: 0px; top: 0px">
+                                <div class="chegadaon">
+                                    <a id="lnk_chegadas" class="chegadas" href="javascript:__doPostBack('lnk_chegadas','')"><img id="img_txt_chegadas" title="Chegadas" class="png" align="absmiddle" src="img/aba_chegadas_on.gif" border="0" /></a>
+                                </div>
+                                <div class="partidaoff">
+                                    <a id="lnk_partidas" class="partidas" href="javascript:__doPostBack('lnk_partidas','')"><img id="img_txt_partidas" title="Partidas" class="png" align="absmiddle" src="img/aba_partidas_off.gif" border="0" /></a>
+                                </div>
+                                <span id="lbl_aeroporto" class="NomAeroporto">Aeroporto Internacional de Navegantes - Ministro Victor Konder</span>&nbsp;
+                            </div>
+                            <div class="lingeral">
+                                <table cellspacing="0" cellpadding="2" width="100%" align="center" border="0">
+                                    <tbody><tr>
+                                        <td>
+                                            <div>
+	<table cellspacing="0" cellpadding="0" border="0" border="0" id="grd_voos" height="0" width="100%">
+		<tr class="chegada2">
+			<th scope="col">Cia Aérea</th><th scope="col">Voo</th><th scope="col">Origem</th><th scope="col">Data</th><th scope="col">Previsto</th><th scope="col">Confirmado</th><th scope="col">Escalas</th><th scope="col">Status</th><th scope="col">Detalhes</th>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl02_img_logo" class="aba" align="middle" alt="GOL" src="img/logo_siso/IM_GLO.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl02_img_leme" class="aba" align="middle" alt="GOL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl02_nom_cia">GOL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_num_voo">02256</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_nom_localidade">Rio de Janeiro</span>
+                                                            -
+                                                            <span id="grd_voos_ctl02_SIG_UF">RJ</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_hor_prev">13:05</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl02_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl02_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYHaYjt+0W6tGQu5+xBP+Nf7hTq+DYlSpN8bwptJR9RFPCx1Jl4C+74lXp7hn8Q2yslI1GL0VXqH1/mf7pomtR0esWIxN7baaLl9Z+jO2Jm3alUTOkzE9n/UvbWMXrCUjasbhdbf6qx94zp7UnV78X+aTvdKI29eIgDHDxhHnwsilg6i8NKzInCanUW1S9W/w+FqBVgiMvxgbyEKlwvmIHV0RMZaI4AVOHqgE1GDVMKr0oY8m/Uh5MDYPO574gGPi+0OlTBXFlYF0o9w57Ubcj8"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada4">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl03_img_logo" class="aba" align="middle" alt="TAM" src="img/logo_siso/IM_TAM.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl03_img_leme" class="aba" align="middle" alt="TAM" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl03_nom_cia">TAM</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_num_voo">03180</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_nom_localidade">São Paulo</span>
+                                                            -
+                                                            <span id="grd_voos_ctl03_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_hor_prev">14:05</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl03_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl03_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYmv/2ZNHG+4B3G4NY4O3A1ZVt+FipYPk+pXOwSSvXsg5vnTfas5HM+MszKxSo6RVh4YfC0t89XzZMOSL9RX5zJt1t10x8edSm1etKHsunAibjeu9pto1oomtIBfwB2agAm+bpREGuIi4VnQuq2c7jDv3o3gvYd/ps2GmJT1Of4q+HXO94S05MXFotwG0Or5gi/B9hYbxHubQtjv4CCbGAiXpXvA3fGTHzLMZeJkM8xz1e2NM7+k51xG3cjVeqwjRihoxWeHowTBwEmK+YukrKj"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl04_img_logo" class="aba" align="middle" alt="AZUL" src="img/logo_siso/IM_AZU.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl04_img_leme" class="aba" align="middle" alt="AZUL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl04_nom_cia">AZUL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_num_voo">04165</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_nom_localidade">Campinas</span>
+                                                            -
+                                                            <span id="grd_voos_ctl04_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_hor_prev">14:35</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl04_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl04_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvY3RyS6u7v9kE0YELYglegpjFXoFguCz5kmL6XWLQxba4g4pmR0XEDDISNV5HdzSRH0Z72OLD48Ypw3Kd32OF4OjUH/mOCXTtvaeJ5iGAY2xcfZwH1CRwgn000lHh6JK+nMAnlDI7hnzkWCWc9Ka+c1LfEunZtG5UqmXhk95G0GakLux9Q4u7u7zjM2GTF2PQiPTj9pJdiKdd28PWVlbVHtGMXr4EZZO5hMLpeXIFf6MMJ6LwzCi8qiba3FmzWSrpY416lowH59Nnf2DJNwb0Jy"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada4">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl05_img_logo" class="aba" align="middle" alt="GOL" src="img/logo_siso/IM_GLO.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl05_img_leme" class="aba" align="middle" alt="GOL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl05_nom_cia">GOL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_num_voo">01356</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_nom_localidade">São Paulo</span>
+                                                            -
+                                                            <span id="grd_voos_ctl05_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_hor_prev">16:55</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl05_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl05_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvZ7tSt5jgbFJhwhh3fNK69vnMjWDDUnNkw5oMjYxTaIO33aAuG/0dv/x2KOergW6Z6DHlNGNqtQ5fW+fdAheNdvwOPaMi3Wz88sdVOrDjvqRi8BchVdJrIdFajVEpaWWXobtHP1lY+kSDY/5cDGTj7eiAGgbnNW+JCF9i9d5FCkPnpIt3Cxn+43UQ7LAXR74NSHGjPg4PxE4XLE2/R+SdyjKwMfEI+G0DHF9u5pWvkhIjiemefjyJHruj0/Rfva8r18b/Xb5OPyi7xv1R5hA/Da"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl06_img_logo" class="aba" align="middle" alt="AZUL" src="img/logo_siso/IM_AZU.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl06_img_leme" class="aba" align="middle" alt="AZUL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl06_nom_cia">AZUL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_num_voo">04559</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_nom_localidade">Porto Alegre</span>
+                                                            -
+                                                            <span id="grd_voos_ctl06_SIG_UF">RS</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_hor_prev">18:50</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl06_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl06_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYEZ3FGQKJdCpMsQTzhfr46EI5PGeHHbF3mP9xw7fpPG+7MNE+cgN6rO2Zc/b+lQqPlsZNFLBB3lUhKSKVkqLA52o3hh0lMFompT/nzd0bBAePwUuG3MKpEQ7Nv8AWwiym+Z2+STrb63eWeBKdn+LrsHYrZiFXTDXON2n+MkwxqR4N5P15rV8agkhP2jscM02E9IbntTnp0wBoeLLZYRm1yr39f5C8nGoCvWsZi0oDfKmad+9QcIouQKnCKL7gT9HkbfzrOIOrtJS3nO9YGuADz"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada4">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl07_img_logo" class="aba" align="middle" alt="TAM" src="img/logo_siso/IM_TAM.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl07_img_leme" class="aba" align="middle" alt="TAM" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl07_nom_cia">TAM</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_num_voo">03148</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_nom_localidade">São Paulo</span>
+                                                            -
+                                                            <span id="grd_voos_ctl07_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_hor_prev">19:00</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_HOR_CONF">19:00</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl07_DSC_STATUS">Cancelado</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl07_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY1qeebBp6jUFqYmYpzRpne2+oowP0axZzhCgqDt+vlkEldnn25VIuygtRIa3Ik+STfEG/9yMpUJt1bPyxCy5YKCVVuHkUBURd21slNvE6wiVDqebHzy0MLxqcxaid14NLpzud6507UFeYk8Q3claDuN0CK238BOeGfJv+2JeaLY2KaSP+kBVfAdtxDAzDDJtphieui8MBidfrEIM/yUugJ4XIVZ9VGTXOu4oB3v40YnCcqs0YP38dDL+tqi3WFOS+QJDnEbLMDKz/FusJshtb/pkWkKSNS6pSe7ry922bL7wQRbsL0Ts29uOBCN4bzgyAdW6RQsY32VHga1w2v4UW3Z"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl08_img_logo" class="aba" align="middle" alt="AZUL" src="img/logo_siso/IM_AZU.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl08_img_leme" class="aba" align="middle" alt="AZUL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl08_nom_cia">AZUL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_num_voo">04558</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_nom_localidade">Campinas</span>
+                                                            -
+                                                            <span id="grd_voos_ctl08_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_hor_prev">19:15</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl08_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl08_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYKSWd23VwesOBfcFMm8S9Fj/bJQEHO8i9miSL7FjZBZ5GP7/1orVTXdLAGZCCbeXo3qvmt7KeEaDeKGlzmwKei6JPTkQIPbhybFE8dIJs3/Aj9jXRCrLKkEhvJ5pT/CpDaw5Yw/cWjuHfBKmV8zqXnWUop8JVR3WA406AhHovmD21L39L8CgwuoMPub1uy9LckyKeah0HMRsN5GJYs3Z8x+/0v5ll3LLGocmyC7y0OVPpqPIlw3KF+KQNYz/0wWOhVwc9I5z/U5k3m5E3ciX5g"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada4">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl09_img_logo" class="aba" align="middle" alt="TAM" src="img/logo_siso/IM_TAM.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl09_img_leme" class="aba" align="middle" alt="TAM" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl09_nom_cia">TAM</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_num_voo">03312</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_nom_localidade">Guarulhos - SP</span>
+                                                            -
+                                                            <span id="grd_voos_ctl09_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_hor_prev">20:10</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl09_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl09_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4Lva5kQkaBI+tik4HQ7sR82NcIIAgYaYO84jmKB/+/ABtNrIz9HgSlV/SwnUs0rQdlKmm3nEOuTp3x3/KFjYagIdIdk7Xj4U7Dx991KDhSttDNRgbETLAka90GuvdNo+g6CIY8Wb+xAAJDHgeTWaDegpAPeZl6QTMF1AlGfsvUYcQyatYQDzIuKjncytP934aTGkkjxKpyN5C1W3tiWgtdWCcbdCAHggps4yVXSlg64eeWUEvkD+2NGAcJgkZdE70DQdwvFA8G1bRnKmaZ2un9a1p"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl10_img_logo" class="aba" align="middle" alt="AZUL" src="img/logo_siso/IM_AZU.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl10_img_leme" class="aba" align="middle" alt="AZUL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl10_nom_cia">AZUL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_num_voo">04722</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_nom_localidade">Campinas</span>
+                                                            -
+                                                            <span id="grd_voos_ctl10_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_dat_voo">15/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_hor_prev">23:00</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl10_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl10_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYnUTYj9Dps7EwhKgBlYOhgojDO+1vR1VncFR5dfTD1+dToDxL+gxCS6g0NmZ++Un2z2SZhH8iru62w0z+7L4szKQoLT9CysR9p1PJ40/7FlW2rpWoXxypH583LV1faBeetIIZ5+yXVSYky592DgKgjM/2DFKZVz1HfDo2i/krtx/BkJJRw3ajQW9vXSZmRH8+SghSWHlWKOU+ZJoux4lDOZeM3muZ+hvi2qm/kETuOYUNmoKBHw+xKH6wQzEuC06G237c2Dkbz5jtLOduytPk5"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada4">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl11_img_logo" class="aba" align="middle" alt="TAM" src="img/logo_siso/IM_TAM.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl11_img_leme" class="aba" align="middle" alt="TAM" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl11_nom_cia">TAM</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_num_voo">03557</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_nom_localidade">Guarulhos - SP</span>
+                                                            -
+                                                            <span id="grd_voos_ctl11_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_dat_voo">16/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_hor_prev">08:55</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl11_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl11_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvYhdq3QuX4S9F8Zxn0FG7wxhyLQoTIjZ6yN6uoN1MHBOsTMJ2frSE4C2gfvvkVFGEoNhX923WV8kwZtALez+W2mlX5492Pc76Fmg+4zHm2hbYV9s5/ZVJAtm93v3pWg83aeno7aTkCHTJz0hv3H+t8ZhWSJfMQwv0coGKhjMXYl5bLGioZdSlY+Xw4c7hr9CavwV2HbcInsfXJsy0CwAXeJpN7dMUPJHZFcFj/9SC8CSzwiW7/QJbF8yrjqGJbhehEDnaNjLDWxgLbGhaN8DZI1"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr><tr class="chegada3">
+			<td class="doted" align="center">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        
+                                                                        <img id="grd_voos_ctl12_img_logo" class="aba" align="middle" alt="AZUL" src="img/logo_siso/IM_AZU.jpg" border="0" />
+                                                                        
+                                                                                                                                                   
+                                                                        <!--<img id="grd_voos_ctl12_img_leme" class="aba" align="middle" alt="AZUL" src="img/leme_.gif" border="0" />-->
+                                                                        
+                                                                    </td>
+                                                                    <td width="75">
+                                                                        <span id="grd_voos_ctl12_nom_cia">AZUL</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_num_voo">04362</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_nom_localidade">Campinas</span>
+                                                            -
+                                                            <span id="grd_voos_ctl12_SIG_UF">SP</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_dat_voo">16/03</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_hor_prev">10:30</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_HOR_CONF">- -</span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_lbl_escala"></span>
+                                                        </td><td class="doted">
+                                                            <span id="grd_voos_ctl12_DSC_STATUS">Previsto</span>
+                                                        </td><td class="doted">
+                                                            <a id="grd_voos_ctl12_link_escala" class="lbOn" title="Escalas" href="detalhe_voo.aspx?5/Xrn1SlFmeTrR/PL3/MpuFgA2ippzxSJIjZJEiIfY33PqCnXUxljmMECu48cD14+ij3oG3J4ZF8y4+yozHKb0eV9BHe083ijNFhexN4LvZDR2vZ83GZNvWTlOIwl9fGAyFYYC9Sbo0ISWIb774G0GhJPLmdYJU3ice9TXUxfc1/F1NvGl6GmI71J3o7UYeygi0Cur8qmI43LEcwCX2JIYx7EekYRdU3iQiG2MRT96310A7IhPrwvHV/daPWTS79q+dN+m/LsqSV9vvupTr+QHq9eEbEILSKiqJF3JyUZJsy5NzNY15aRK3uV3QEAitYTz8N0cTJm249FwuIiF3PoetgWOKfa7QS/fZIOeuAFDL2UGvzIu8Dw0oRqCp+W0Vc"><img src="img/escala_sim.gif" border="0" /></a>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        </td>
+		</tr>
+	</table>
+</div>
+                                        </td>
+                                    </tr>
+                                        <tr class="chegada5">
+                                            <td>
+                                                <strong>Data da última atualização do arquivo:</strong>
+                                                <span id="lbl_data_criacao">15/03/21 11:22:22 (Horário de Brasília)</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="chegada5">
+                                            <td>
+                                                As informações aqui fornecidas são obtidas diretamente das companhias aéreas. Não
+                                                nos responsabilizamos por consequências resultantes de possíveis erros ou omissões.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </span>
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+        <div class="lingeral">
+            &nbsp;</div>
+        <div id="footer_center">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INFRAERO -
+        Empresa Brasileira de Infraestrutura Aeroportuária &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        Versão 1.0.24&nbsp;
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        function verificaEscolha(combo, texto) {
+            if (document.getElementById(combo).value == 'Selecione') {
+                alert(texto);
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function AfterPostback() {
+            initialize();
+        }
+
+        function PageRequestManagerPropertyChanged(sender, args) {
+            if (args.get_propertyName() == "inPostBack") {
+                if (!$object("_PageRequestManager").get_inPostBack())
+                    AfterPostback();
+            }
+        }
+
+        function pageLoad() {
+            initialize();
+            //$object("_PageRequestManager").propertyChanged.add(PageRequestManagerPropertyChanged);
+        }
+    </script>
+   
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"txt_water_box_ClientState","WatermarkCssClass":"botao41","WatermarkText":"Número do Voo","id":"txt_water_box"}, null, null, $get("txt_num_voo"));
+});
+//]]>
+</script>
+</form>
+
+   
+</body>
+</html>
