@@ -34,57 +34,52 @@ end
 doc = Nokogiri::HTML(File.read(aero))  
 
 
-Table_voos = doc.css('td') #buscar a tag td
+table_voos = doc.css('td') #buscar a tag td
 
 dados_voo = []
 coleta_completa = false
 
 open("#{aero}.csv", 'w') do |arquivo| #criar arquivo .csv
     arquivo.puts('"OPERADORA","NUMERO DO VOO","DESTINO","DATA", "HORARIO PREVISTO", "HORARIO CONFIRMADO","STATUS"')
-Table_voos.search('span').each do |span| #buscar a tag span dentro da tag td
-    next if span['id'] == nil
-    
-    if span['id'].include?("nom_cia") 
-        cia_aerea = span.text
-        dados_voo.push(cia_aerea)
-    
-    elsif span['id'].include?("num_voo") 
-        num_voo = span.text
-        dados_voo.push(num_voo)
-
-    elsif span['id'].include?("nom_localidade") 
-        destino = span.text
-        dados_voo.push(destino)
-
-    elsif span['id'].include?("dat_voo") 
-        data = span.text
-        dados_voo.push(data)
-
-    elsif span['id'].include?("hor_prev") 
-        horario_previsto = span.text
-        dados_voo.push(horario_previsto)
-
-    elsif span['id'].include?("HOR_CONF")
-        horario_confirmado = span.text
-        dados_voo.push(horario_confirmado)
-
-    elsif span['id'].include?("DSC_STATUS")
-        status = span.text
-        dados_voo.push(status)
-        coleta_completa = true
+    table_voos.search('span').each do |span| #buscar a tag span dentro da tag td
+        next if span['id'] == nil
         
+        if span['id'].include?("nom_cia") 
+            cia_aerea = span.text
+            dados_voo.push(cia_aerea)
+        
+        elsif span['id'].include?("num_voo") 
+            num_voo = span.text
+            dados_voo.push(num_voo)
 
+        elsif span['id'].include?("nom_localidade") 
+            destino = span.text
+            dados_voo.push(destino)
+
+        elsif span['id'].include?("dat_voo") 
+            data = span.text
+            dados_voo.push(data)
+
+        elsif span['id'].include?("hor_prev") 
+            horario_previsto = span.text
+            dados_voo.push(horario_previsto)
+
+        elsif span['id'].include?("HOR_CONF")
+            horario_confirmado = span.text
+            dados_voo.push(horario_confirmado)
+
+        elsif span['id'].include?("DSC_STATUS")
+            status = span.text
+            dados_voo.push(status)
+            coleta_completa = true
+        end
+        
+        if coleta_completa == true        
+            arquivo.puts "\"#{dados_voo[0]}\",\"#{dados_voo[1]}\",\"#{dados_voo[2]}\,\"#{dados_voo[3]}\",\"#{dados_voo[4]}\",\"#{dados_voo[5]}\",\"#{dados_voo[6]}\""
+            coleta_completa = false
+            dados_voo = []
+        end     
     end
     
-    if coleta_completa == true
-        
-        arquivo.puts "\"#{dados_voo[0]}\",\"#{dados_voo[1]}\",\"#{dados_voo[2]}\,\"#{dados_voo[3]}\",\"#{dados_voo[4]}\",\"#{dados_voo[5]}\",\"#{dados_voo[6]}\""
-        coleta_completa = false
-        dados_voo = []
-    end     
-
-    
-
-end
     puts ('===='*10) + "ARQUIVO CSV CRIADO COM SUCESSO!" + ('===='*10)
 end
